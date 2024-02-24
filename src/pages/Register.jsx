@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ export default function Register() {
                 </label>
                 <button>Sign up</button>
             </form>
-            <p>You do have an account? Login</p>
+            <p>You do have an account? <Link to="/login">Login</Link></p>
         </div>
     </div>
   )
